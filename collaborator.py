@@ -35,8 +35,10 @@ def matchCommonInterests(graph, user_in):
 
 	matcher = NodeMatcher(graph)
 	matcher.match("User", user_id=user_in)
-	MATCH(origin:User {user_id=user_in})-[interest_origin:INTERESTED_IN]->(interest_actual:name)<-[interest_terminal:INTERESTED_IN]-(user_terminal:User)
-	RETURN interest_actual.name, interest_origin.weight
+	# MATCH(origin:User {user_id=user_in})-[interest_origin:INTERESTED_IN]->(interest_actual:name)
+	# RETURN interest_actual.name, interest_origin.weight
+
+	# <-[interest_terminal:INTERESTED_IN]-(user_terminal:User)
 
 	# if(graph.nodes.match("User", first_name=user_in).first())
 	# if(graph.nodes.match("User", user_id=user_in)==None)
